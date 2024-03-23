@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dado.css">
+    <title>Jogo do Dado</title>
+</head>
+
+<body>
+
+    <div id="cubos-wrapper" class="row align-self-center justify-content-center">
+        <div class="col-6 col-lg-4">
+            <div class="cubo-wrapper">
+                <div class="cubo" [ngClass]="{'cubo': true, 'rotating': rotating}">
+                    <div class="lado lado-1 d-flex justify-content-center">
+                        <span class="ponto ponto-1 align-self-center"></span>
+                    </div>
+                    <div class="lado lado-2 d-flex justify-content-between">
+                        <span class="ponto ponto-1 align-self-start m-2"></span>
+                        <span class="ponto ponto-2 align-self-end m-2"></span>
+                    </div>
+                    <div class="lado lado-3 d-flex justify-content-between">
+                        <span class="ponto align-self-start m-2"></span>
+                        <span class="ponto align-self-center"></span>
+                        <span class="ponto align-self-end m-2"></span>
+                    </div>
+                    <div class="lado lado-4 d-flex flex-wrap justify-content-between">
+                        <div class="w-100 align-self-start d-flex justify-content-between">
+                            <span class="ponto m-2"></span>
+                            <span class="ponto m-2"></span>
+                        </div>
+                        <div class="w-100 align-self-end d-flex justify-content-between">
+                            <span class="ponto m-2"></span>
+                            <span class="ponto m-2"></span>
+                        </div>
+                    </div>
+                    <div class="lado lado-5 d-flex justify-content-between flex-column">
+                        <div class="w-100 align-self-start d-flex justify-content-between">
+                            <span class="ponto ponto-1 m-2"></span>
+                            <span class="ponto ponto-2 m-2"></span>
+                        </div>
+                        <div class="w-100 align-self-center d-flex justify-content-center">
+                            <span class="ponto"></span>
+                        </div>
+                        <div class="w-100 align-self-end d-flex justify-content-between">
+                            <span class="ponto m-2"></span>
+                            <span class="ponto m-2"></span>
+                        </div>
+                    </div>
+                    <div class="lado lado-6 d-flex align-items-stretch">
+                        <div class="w-50 d-flex flex-column">
+                            <span class="ponto align-self-start m-auto"></span>
+                            <span class="ponto align-self-center m-auto"></span>
+                            <span class="ponto align-self-bottom m-auto"></span>
+                        </div>
+                        <div class="w-50 d-flex flex-column">
+                            <span class="ponto align-self-start m-auto"></span>
+                            <span class="ponto align-self-center m-auto"></span>
+                            <span class="ponto align-self-bottom m-auto"></span>
+                        </div>
+                    </div>
+                    <div class="beam beam-1"></div>
+                    <div class="beam beam-2"></div>
+                    <div class="beam beam-3"></div>
+                </div>
+            </div>
+            <div class="container-button">
+
+                <div class="center">
+                    <button class="btn" [disabled]="rotating" onclick="rotateDice()">
+                        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                            <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                            <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                        </svg>
+                        <span>Jogue o dado</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./dado.js"></script>
+
+</body>
+
+</html>
